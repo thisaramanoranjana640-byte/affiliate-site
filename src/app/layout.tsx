@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -8,12 +9,6 @@ export const metadata: Metadata = {
   title: "TopPicks - Independent Tech Reviews & Buyer's Guides",
   description:
     "Discover top-rated tech, gadgets, and office gear with in-depth reviews, pros/cons, and unbiased buying recommendations.",
-  keywords: ["tech reviews", "best gadgets", "affiliate gear", "buying guides"],
-  openGraph: {
-    title: "TopPicks - Independent Tech Reviews",
-    description: "In-depth reviews and buyer's guides to help you make informed decisions.",
-    type: "website",
-  },
 };
 
 export default function RootLayout({
@@ -23,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+      </body>
+      {/* Replace G-XXXXXXXXXX with your actual Google Analytics ID */}
+      <GoogleAnalytics gaId="G-50DS9DV56C" />
     </html>
   );
 }
