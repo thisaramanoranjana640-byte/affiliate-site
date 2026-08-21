@@ -14,7 +14,9 @@ export default function AffiliateButton({
   className = 'bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-6 rounded-lg transition-colors inline-block cursor-pointer',
 }: AffiliateButtonProps) {
   const handleClick = () => {
-    trackAffiliateClick(slug);
+    if (slug) {
+      trackAffiliateClick(slug);
+    }
   };
 
   return (

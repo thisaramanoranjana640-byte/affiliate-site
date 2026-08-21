@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "TopPicks - Independent Tech Reviews & Buyer's Guides",
-  description:
-    "Discover top-rated tech, gadgets, and office gear with in-depth reviews, pros/cons, and unbiased buying recommendations.",
+  title: 'Tech Reviews & Buying Guides',
+  description: 'In-depth tech gear reviews and side-by-side product comparisons.',
 };
 
 export default function RootLayout({
@@ -18,11 +17,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
+      <body className={`${inter.className} bg-slate-50 text-slate-900 min-h-screen flex flex-col`}>
+        {/* Site-wide FTC / Amazon Disclosure Header */}
+        <AffiliateDisclosure />
+
+        <div className="flex-1">
+          {children}
+        </div>
+
+        <footer className="border-t border-slate-200 bg-white py-8 mt-12 text-center text-xs text-slate-500">
+          <p>© {new Date().getFullYear()} Tech Reviews. All rights reserved.</p>
+        </footer>
       </body>
-      {/* Replace G-XXXXXXXXXX with your actual Google Analytics ID */}
-      <GoogleAnalytics gaId="G-50DS9DV56C" />
     </html>
   );
 }
