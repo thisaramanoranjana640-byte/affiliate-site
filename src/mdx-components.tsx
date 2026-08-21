@@ -2,6 +2,7 @@ import type { MDXComponents } from 'mdx/types';
 import AffiliateButton from '@/components/AffiliateButton';
 import ComparisonTable from '@/components/ComparisonTable';
 import ProsCons from '@/components/ProsCons';
+import VerdictBadge from '@/components/VerdictBadge';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -21,6 +22,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     AffiliateButton,
     ComparisonTable,
     ProsCons,
+    VerdictBadge,
     ...components,
   };
 }
