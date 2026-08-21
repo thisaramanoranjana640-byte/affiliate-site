@@ -8,4 +8,10 @@ export interface Product {
   imageUrl?: string;
   rating?: number;
   affiliateUrl?: string;
+  specs?: {
+    batteryLife?: string;
+    noiseCancellation?: string;
+    weight?: string;
+    connectivity?: string;
+  };
 }
