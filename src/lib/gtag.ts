@@ -1,9 +1,43 @@
-import { sendGAEvent } from "@next/third-parties/google";
+export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || '';
 
-export const trackAffiliateClick = (productName: string, affiliateUrl: string) => {
-  sendGAEvent("event", "click_affiliate_link", {
-    event_category: "Outbound Link",
-    event_label: productName,
-    destination_url: affiliateUrl,
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+export const pageview = (url: string) => {
+  if (typeof window !== 'undefined' && window.gtag && GA_TRACKING_ID) {
+    window.gtag('config', GA_TRACKING_ID, {
+      page_path: url,
+    });
+  }
+};
+
+export const event = ({
+  action,
+  category,
+  label,
+  value,
+}: {
+  action: string;
+  category: string;
+  label?: string;
+  value?: number;
+}) => {
+  if (typeof window !== 'undefined' && window.gtag && GA_TRACKING_ID) {
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+    });
+  }
+};
+
+export const trackAffiliateClick = (slug: string) => {
+  event({
+    action: 'click_affiliate_link',
+    category: 'Affiliate',
+    label: slug,
   });
 };

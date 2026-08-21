@@ -1,38 +1,61 @@
-"use client";
+'use client';
 
-import { Product } from "@/data/products";
-import { trackAffiliateClick } from "@/lib/gtag";
+import Link from 'next/link';
+import { trackAffiliateClick } from '@/lib/gtag';
 
 interface ProductCardProps {
-  product: Product;
+  slug: string;
+  title: string;
+  price: string;
+  rating: number;
+  image: string;
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({
+  slug,
+  title,
+  price,
+  rating,
+  image,
+}: ProductCardProps) {
   const handleClick = () => {
-    trackAffiliateClick(product.title, product.affiliateUrl);
+    trackAffiliateClick(slug);
   };
 
   return (
-    <div className="bg-white border rounded-xl shadow-sm hover:shadow-md transition p-5 flex flex-col justify-between">
+    <div className="border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col justify-between">
       <div>
-        <span className="text-xs font-semibold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-1 rounded">
-          {product.category}
-        </span>
-        <h3 className="text-lg font-bold mt-2 text-slate-800">{product.title}</h3>
-        <p className="text-sm text-slate-600 mt-2">{product.description}</p>
+        <div className="relative h-48 w-full mb-4 overflow-hidden rounded-lg bg-gray-100">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
+        <div className="flex items-center space-x-2 mb-3">
+          <span className="text-amber-500 font-bold">★ {rating}</span>
+          <span className="text-gray-500 text-sm">/ 5.0</span>
+        </div>
+        <p className="text-2xl font-black text-gray-900 mb-4">{price}</p>
       </div>
 
-      <div className="mt-6 border-t pt-4 flex items-center justify-between">
-        <span className="text-xl font-bold text-slate-900">${product.price}</span>
+      <div className="space-y-2">
         <a
-          href={product.affiliateUrl}
+          href={`/go/${slug}`}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow sponsored noopener noreferrer"
           onClick={handleClick}
-          className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-4 py-2 rounded-lg transition"
+          className="w-full block text-center bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-4 rounded-lg transition-colors"
         >
-          Check Price
+          Buy Now
         </a>
+        <Link
+          href={`/review/${slug}`}
+          className="w-full block text-center bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors text-sm"
+        >
+          Read Full Review
+        </Link>
       </div>
     </div>
   );
