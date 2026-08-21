@@ -1,42 +1,10 @@
-import TableOfContents from '@/components/TableOfContents';
+import { products } from '@/data/products';
 
-<div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto p-6">
-  {/* Sticky TOC Sidebar */}
-  <aside className="lg:w-1/4">
-    <TableOfContents />
-  </aside>
-
-  {/* Article Body */}
-  <article className="lg:w-3/4">
-    # Best Noise-Canceling Headphones for 2026
-
-    When choosing high-end wireless headphones, active noise cancellation (ANC), battery life, and sound profile are the primary factors to evaluate.
-
-    ## Top Recommendations
-
-    * **Best Overall:** Sony WH-1000XM5
-    * **Best Ecosystem Integration:** Apple AirPods Pro 2
-    * **Best Long-Wearing Comfort:** Bose QuietComfort 45
-
-    ## Sony WH-1000XM5 Deep Dive
-
-## Sony WH-1000XM5 Deep Dive
-
-The XM5s feature dual processors controlling eight microphones, delivering remarkable low-frequency ambient noise attenuation.
-
-<ProsCons
-  pros={[
-    "Class-leading active noise cancellation",
-    "Ultra-lightweight design for long wear",
-    "Exceptional battery life (30+ hours)",
-    "Improved microphone clarity for calls"
-  ]}
-  cons={[
-    "Non-foldable headband design",
-    "Higher price point than previous generation"
-  ]}
+<VerdictBadge
+  score={9.4}
+  verdictTitle="Editor's Choice for Noise Cancellation"
+  summary="The Sony WH-1000XM5 sets the benchmark for active noise cancellation and overall audio clarity in 2026."
+  slug="sony-wh1000xm5"
 />
 
-<AffiliateButton slug="sony-wh1000xm5" label="Check Best Price on Amazon" />
-  </article>
-</div>
+<RelatedReviews currentSlug="sony-wh1000xm5" products={products} />

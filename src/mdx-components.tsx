@@ -3,6 +3,7 @@ import AffiliateButton from '@/components/AffiliateButton';
 import ComparisonTable from '@/components/ComparisonTable';
 import ProsCons from '@/components/ProsCons';
 import VerdictBadge from '@/components/VerdictBadge';
+import RelatedReviews from '@/components/RelatedReviews';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -23,6 +24,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ComparisonTable,
     ProsCons,
     VerdictBadge,
+    RelatedReviews,
     ...components,
   };
 }
