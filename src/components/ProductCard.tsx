@@ -3,33 +3,57 @@
 import Link from 'next/link';
 import { trackAffiliateClick } from '@/lib/gtag';
 
-interface ProductCardProps {
+export interface Product {
   slug: string;
   title: string;
   price: string;
   rating: number;
-  image: string;
+  image?: string;
+  imageUrl?: string;
+  description?: string;
 }
 
-export default function ProductCard({
-  slug,
-  title,
-  price,
-  rating,
-  image,
-}: ProductCardProps) {
+export interface ProductCardProps {
+  product?: Product;
+  slug?: string;
+  title?: string;
+  price?: string;
+  rating?: number;
+  image?: string;
+}
+
+export default function ProductCard(props: ProductCardProps) {
+  // Extract values with fallbacks
+  const slug = props.product?.slug ?? props.slug ?? '';
+  const title = props.product?.title ?? props.title ?? 'Product Review';
+  const price = props.product?.price ?? props.price ?? '$0.00';
+  const rating = props.product?.rating ?? props.rating ?? 0;
+  
+  // Accept 'image' or 'imageUrl' or fall back to placeholder
+  const image =
+    props.product?.image ??
+    props.product?.imageUrl ??
+    props.image ??
+    '/placeholder.jpg';
+
   const handleClick = () => {
-    trackAffiliateClick(slug);
+    if (slug) {
+      trackAffiliateClick(slug);
+    }
   };
 
   return (
     <div className="border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col justify-between">
       <div>
-        <div className="relative h-48 w-full mb-4 overflow-hidden rounded-lg bg-gray-100">
+        <div className="relative h-48 w-full mb-4 overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
           <img
             src={image}
             alt={title}
             className="w-full h-full object-cover object-center"
+            onError={(e) => {
+              // Hide image if src broken
+              (e.target as HTMLImageElement).style.display = 'none';
+            }}
           />
         </div>
         <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
