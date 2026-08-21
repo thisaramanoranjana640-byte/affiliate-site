@@ -4,10 +4,10 @@ export interface Product {
   title: string;
   description?: string;
   price: string | number;
+  rating?: number;
   image?: string;
   imageUrl?: string;
-  rating?: number;
-  affiliateUrl?: string;
+  category?: 'headphones' | 'earbuds' | 'speakers' | 'accessories';
   specs?: {
     batteryLife?: string;
     noiseCancellation?: string;

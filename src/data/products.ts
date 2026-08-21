@@ -8,13 +8,8 @@ export const products: Product[] = [
     description: 'Industry leading noise canceling headphones.',
     price: '$398.00',
     rating: 4.8,
+    category: 'headphones',
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800',
-    specs: {
-      batteryLife: '30 Hours',
-      noiseCancellation: 'Industry Leading (Auto NC)',
-      weight: '250g',
-      connectivity: 'Bluetooth 5.2',
-    },
   },
   {
     id: '2',
@@ -23,13 +18,8 @@ export const products: Product[] = [
     description: 'Active noise cancellation with transparency mode.',
     price: '$249.00',
     rating: 4.7,
+    category: 'earbuds',
     image: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=800',
-    specs: {
-      batteryLife: '6 Hours (30h with Case)',
-      noiseCancellation: 'Adaptive Audio',
-      weight: '50.8g',
-      connectivity: 'Bluetooth 5.3',
-    },
   },
   {
     id: '3',
@@ -38,12 +28,7 @@ export const products: Product[] = [
     description: 'Iconic quietness, comfort, and sound.',
     price: '$329.00',
     rating: 4.6,
+    category: 'headphones',
     image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800',
-    specs: {
-      batteryLife: '22 Hours',
-      noiseCancellation: 'Quiet & Aware Modes',
-      weight: '240g',
-      connectivity: 'Bluetooth 5.1',
-    },
   },
 ];
