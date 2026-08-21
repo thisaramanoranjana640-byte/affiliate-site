@@ -1,33 +1,20 @@
-export interface Product {
-  slug: string;
-  title: string;
-  price: string;
-  rating: number;
-  image?: string;
-  imageUrl?: string;
-  description?: string;
-}
+import { Product } from '@/types/product';
 
 export const products: Product[] = [
   {
-    slug: 'sony-wh1000xm5',
-    title: 'Sony WH-1000XM5',
-    price: '$398.00',
-    rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800',
+    id: '1',
+    slug: 'sample-product-one',
+    title: 'Sample Product One',
+    description: 'This is a description for sample product one.',
+    price: 99.99,
+    image: '/images/sample-1.jpg',
   },
   {
-    slug: 'airpods-pro-2',
-    title: 'Apple AirPods Pro 2',
-    price: '$249.00',
-    rating: 4.7,
-    image: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=800',
-  },
-  {
-    slug: 'bose-qc45',
-    title: 'Bose QuietComfort 45',
-    price: '$329.00',
-    rating: 4.6,
-    image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800',
+    id: '2',
+    slug: 'sample-product-two',
+    title: 'Sample Product Two',
+    description: 'This is a description for sample product two.',
+    price: 149.99,
+    image: '/images/sample-2.jpg',
   },
 ];
