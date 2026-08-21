@@ -1,6 +1,7 @@
 import type { MDXComponents } from 'mdx/types';
 import AffiliateButton from '@/components/AffiliateButton';
 import ComparisonTable from '@/components/ComparisonTable';
+import ProsCons from '@/components/ProsCons';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -16,9 +17,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ul: ({ children }) => (
       <ul className="list-disc list-inside space-y-2 mb-4 text-slate-700">{children}</ul>
     ),
-    // Expose your custom components globally inside MDX files
+    // Custom MDX Components
     AffiliateButton,
     ComparisonTable,
+    ProsCons,
     ...components,
   };
 }
