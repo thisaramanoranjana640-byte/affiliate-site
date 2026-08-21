@@ -1,12 +1,17 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const alt = 'Product Review';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default async function Image({ params }: { params: { slug: string } }) {
-  const title = params.slug.replace(/-/g, ' ').toUpperCase();
+export default async function Image({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const title = slug.replace(/-/g, ' ').toUpperCase();
 
   return new ImageResponse(
     (
@@ -24,7 +29,14 @@ export default async function Image({ params }: { params: { slug: string } }) {
           fontFamily: 'sans-serif',
         }}
       >
-        <div style={{ color: '#38bdf8', fontSize: 24, fontWeight: 600, marginBottom: 16 }}>
+        <div
+          style={{
+            color: '#38bdf8',
+            fontSize: 24,
+            fontWeight: 600,
+            marginBottom: 16,
+          }}
+        >
           PRODUCT REVIEW & RATING
         </div>
         <div style={{ fontSize: 56, fontWeight: 800, lineHeight: 1.2 }}>

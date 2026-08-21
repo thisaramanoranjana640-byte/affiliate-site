@@ -1,16 +1,12 @@
 import { MetadataRoute } from 'next';
+import { products } from '@/data/products';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com';
 
-  const products = [
-    { slug: 'best-wireless-headphones', updatedAt: new Date() },
-    { slug: 'ergonomic-office-chairs', updatedAt: new Date() },
-  ];
-
   const productEntries: MetadataRoute.Sitemap = products.map((product) => ({
     url: `${baseUrl}/review/${product.slug}`,
-    lastModified: product.updatedAt,
+    lastModified: new Date(),
     changeFrequency: 'weekly',
     priority: 0.8,
   }));

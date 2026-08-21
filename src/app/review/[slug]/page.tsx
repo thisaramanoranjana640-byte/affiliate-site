@@ -13,7 +13,6 @@ export default async function ReviewPage({ params }: PageProps) {
 
   return (
     <main className="p-8 max-w-4xl mx-auto">
-      {/* Schema.org Product Structured Data */}
       <ProductJsonLd
         name={formattedTitle.toUpperCase()}
         image={`https://yourdomain.com/images/${slug}.jpg`}
@@ -32,7 +31,6 @@ export default async function ReviewPage({ params }: PageProps) {
         In-depth review and detailed breakdown of features, performance, and value.
       </p>
 
-      {/* Tracked Redirection Link */}
       <AffiliateButton slug={slug} label="Check Price on Amazon" />
     </main>
   );
