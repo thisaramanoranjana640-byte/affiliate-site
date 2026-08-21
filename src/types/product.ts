@@ -2,9 +2,10 @@ export interface Product {
   id?: string;
   slug: string;
   title: string;
-  description: string;
-  price: number;
+  description?: string;
+  price: string | number;
   image?: string;
-  affiliateUrl?: string;
+  imageUrl?: string;
   rating?: number;
+  affiliateUrl?: string;
 }
