@@ -4,6 +4,7 @@ import FeaturedGuides from '@/components/FeaturedGuides';
 import LatestReviews from '@/components/LatestReviews';
 import ExpertGuides from '@/components/ExpertGuides';
 import TrustSection from '@/components/TrustSection';
+import Newsletter from '@/components/Newsletter';
 import ProductCatalog from '@/components/ProductCatalog';
 import ComparisonTable from '@/components/ComparisonTable';
 import { products } from '@/data/products';
@@ -22,7 +23,7 @@ export default function Home() {
         {/* Featured Comparison Guides */}
         <FeaturedGuides />
 
-        {/* Expert Advice & Educational Guides */}
+        {/* Educational Buying Guides */}
         <ExpertGuides />
 
         {/* Hands-On Single Product Reviews */}
@@ -41,7 +42,7 @@ export default function Home() {
           <ProductCatalog initialProducts={products} />
         </section>
 
-        {/* Specs Comparison Table */}
+        {/* Side-by-Side Comparison */}
         <section id="reviews">
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-slate-900">
@@ -50,6 +51,9 @@ export default function Home() {
           </div>
           <ComparisonTable products={products} />
         </section>
+
+        {/* Newsletter Subscription Box */}
+        <Newsletter />
       </div>
     </main>
   );
