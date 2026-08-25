@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import CategoryGrid from '@/components/CategoryGrid';
 import FeaturedGuides from '@/components/FeaturedGuides';
 import LatestReviews from '@/components/LatestReviews';
+import ExpertGuides from '@/components/ExpertGuides';
 import TrustSection from '@/components/TrustSection';
 import ProductCatalog from '@/components/ProductCatalog';
 import ComparisonTable from '@/components/ComparisonTable';
@@ -21,6 +22,9 @@ export default function Home() {
         {/* Featured Comparison Guides */}
         <FeaturedGuides />
 
+        {/* Expert Advice & Educational Guides */}
+        <ExpertGuides />
+
         {/* Hands-On Single Product Reviews */}
         <LatestReviews products={products} />
 
@@ -33,9 +37,6 @@ export default function Home() {
             <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
               All Reviewed Gear
             </h2>
-            <p className="text-slate-600 text-sm mt-1">
-              Browse our complete catalog with live price tracking.
-            </p>
           </div>
           <ProductCatalog initialProducts={products} />
         </section>
