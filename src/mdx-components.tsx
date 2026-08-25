@@ -4,6 +4,7 @@ import ComparisonTable from '@/components/ComparisonTable';
 import ProsCons from '@/components/ProsCons';
 import VerdictBadge from '@/components/VerdictBadge';
 import RelatedReviews from '@/components/RelatedReviews';
+import SocialShareBar from '@/components/SocialShareBar';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -25,6 +26,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ProsCons,
     VerdictBadge,
     RelatedReviews,
+    SocialShareBar,
     ...components,
   };
 }
