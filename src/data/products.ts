@@ -6,7 +6,7 @@ export const products: Product[] = [
     slug: 'sony-wh1000xm5',
     title: 'Sony WH-1000XM5',
     description: 'Industry leading noise canceling headphones.',
-    price: '$398.00',
+    price: 399.99, // Change from string "399.99" to number 399.99
     rating: 4.8,
     category: 'headphones',
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800',
@@ -16,7 +16,7 @@ export const products: Product[] = [
     slug: 'airpods-pro-2',
     title: 'Apple AirPods Pro 2',
     description: 'Active noise cancellation with transparency mode.',
-    price: '$249.00',
+    price: 399.99, // Change from string "399.99" to number 399.99
     rating: 4.7,
     category: 'earbuds',
     image: 'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=800',
@@ -26,7 +26,7 @@ export const products: Product[] = [
     slug: 'bose-qc45',
     title: 'Bose QuietComfort 45',
     description: 'Iconic quietness, comfort, and sound.',
-    price: '$329.00',
+    price: 399.99, // Change from string "399.99" to number 399.99
     rating: 4.6,
     category: 'headphones',
     image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800',
