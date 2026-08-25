@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import CategoryGrid from '@/components/CategoryGrid';
 import FeaturedGuides from '@/components/FeaturedGuides';
 import LatestReviews from '@/components/LatestReviews';
+import TrustSection from '@/components/TrustSection';
 import ProductCatalog from '@/components/ProductCatalog';
 import ComparisonTable from '@/components/ComparisonTable';
 import { products } from '@/data/products';
@@ -22,6 +23,9 @@ export default function Home() {
 
         {/* Hands-On Single Product Reviews */}
         <LatestReviews products={products} />
+
+        {/* Why Trust Us & Affiliate Disclosure */}
+        <TrustSection />
 
         {/* Catalog & Filter Grid */}
         <section id="best-picks">
