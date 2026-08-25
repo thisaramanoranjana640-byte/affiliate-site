@@ -1,33 +1,120 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-slate-900 text-slate-400 py-12 mt-20 border-t border-slate-800">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
-          <span className="text-xl font-bold text-white mb-4 block">TopPicks</span>
-          <p className="text-sm leading-relaxed">
-            Providing honest, research-backed product reviews and buying guides to help you make informed purchasing decisions.
-          </p>
+    <footer className="bg-slate-900 border-t border-slate-800 text-slate-400 text-xs mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        {/* Top Grid: Brand & Navigation Links */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10 pb-10 border-b border-slate-800">
+          
+          {/* Brand Info */}
+          <div className="md:col-span-1 space-y-3">
+            <Link href="/" className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center text-slate-950 font-black text-lg">
+                T
+              </div>
+              <span className="font-extrabold text-base text-white tracking-tight">
+                TechPulse
+              </span>
+            </Link>
+            <p className="text-slate-400 text-xs leading-relaxed">
+              Honest, independent reviews and comprehensive buying guides for tech and home-office gear.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-white font-bold text-sm mb-3">Navigation</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/" className="hover:text-amber-400 transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/#best-picks" className="hover:text-amber-400 transition-colors">
+                  Best Picks
+                </Link>
+              </li>
+              <li>
+                <Link href="/#reviews" className="hover:text-amber-400 transition-colors">
+                  Reviews
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides/best-headphones" className="hover:text-amber-400 transition-colors">
+                  Buying Guides
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company & Info */}
+          <div>
+            <h3 className="text-white font-bold text-sm mb-3">Company</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="hover:text-amber-400 transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-amber-400 transition-colors">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal Policies */}
+          <div>
+            <h3 className="text-white font-bold text-sm mb-3">Legal & Transparency</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/privacy" className="hover:text-amber-400 transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-amber-400 transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/affiliate-disclosure" className="hover:text-amber-400 transition-colors">
+                  Affiliate Disclosure
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-sm">
-            <li><Link href="/" className="hover:text-white transition">Home</Link></li>
-            <li><Link href="#featured" className="hover:text-white transition">Featured Gear</Link></li>
-          </ul>
+        {/* Disclosures Section */}
+        <div className="space-y-4 mb-8 text-slate-400 text-[11px] leading-relaxed max-w-4xl">
+          <div>
+            <span className="font-bold text-slate-300">Affiliate Disclosure: </span>
+            TechPulse is reader-supported. When you buy through links on our site, we may earn an affiliate commission at no additional cost to you. This helps fund our independent testing process.
+          </div>
+
+          <div>
+            <span className="font-bold text-slate-300">Amazon Associate Disclosure: </span>
+            As an Amazon Associate, TechPulse earns from qualifying purchases. Amazon and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
+          </div>
         </div>
 
-        <div>
-          <h4 className="text-white font-semibold mb-4">Legal & Disclaimers</h4>
-          <p className="text-xs leading-relaxed">
-            All product names, logos, and brands are property of their respective owners. Product prices and availability are accurate as of the date/time indicated and are subject to change.
-          </p>
-          <p className="text-xs mt-4">
-            &copy; {new Date().getFullYear()} TopPicks. All rights reserved.
-          </p>
+        {/* Bottom Bar: Copyright */}
+        <div className="pt-6 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px]">
+          <p>© {currentYear} TechPulse. All rights reserved.</p>
+          <div className="flex gap-4">
+            <Link href="/privacy" className="hover:text-slate-300">Privacy</Link>
+            <Link href="/terms" className="hover:text-slate-300">Terms</Link>
+            <Link href="/affiliate-disclosure" className="hover:text-slate-300">Disclosure</Link>
+          </div>
         </div>
+
       </div>
     </footer>
   );
