@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import CategoryGrid from '@/components/CategoryGrid';
+import FeaturedGuides from '@/components/FeaturedGuides';
 import ProductCatalog from '@/components/ProductCatalog';
 import ComparisonTable from '@/components/ComparisonTable';
 import { products } from '@/data/products';
@@ -13,8 +14,11 @@ export default function Home() {
       {/* 2. Main content container */}
       <div className="max-w-6xl mx-auto p-8 space-y-16">
         
-        {/* Popular Categories Grid Section */}
+        {/* Popular Categories Grid */}
         <CategoryGrid />
+
+        {/* Featured Best Guides */}
+        <FeaturedGuides />
 
         {/* Best Picks & Product Catalog Section */}
         <section id="best-picks">
